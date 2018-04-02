@@ -195,7 +195,8 @@ void SpeedTest::downloaderError()
 
 void SpeedTest::uploaderError()
 {
-
+    setError(UploadError);
+    setErrorString(p->uploader->error());
 }
 
 STServerSorterItem SpeedTest::findBestServer()
@@ -227,6 +228,11 @@ STServerSorter *SpeedTest::sorter() const
 STDownloader *SpeedTest::downloader() const
 {
     return p->downloader;
+}
+
+STUploader *SpeedTest::uploader() const
+{
+    return p->uploader;
 }
 
 SpeedTest::Error SpeedTest::error() const

@@ -27,6 +27,7 @@
 #include "stserversorter.h"
 #include "stdownloader.h"
 #include "libqspeedtest_global.h"
+#include "stuploader.h"
 
 class LIBQSPEEDTESTSHARED_EXPORT SpeedTest : public QObject
 {
@@ -41,6 +42,12 @@ class LIBQSPEEDTESTSHARED_EXPORT SpeedTest : public QObject
     Q_PROPERTY(QString errorString READ errorString NOTIFY errorStringChanged)
     Q_PROPERTY(QString statusString READ statusString NOTIFY statusStringChanged)
     Q_PROPERTY(QVariantMap bestServer READ bestServer NOTIFY bestServerChanged)
+
+    Q_PROPERTY(STClient* client READ client NOTIFY fakeSignal)
+    Q_PROPERTY(STServerList* serverList READ serverList NOTIFY fakeSignal)
+    Q_PROPERTY(STServerSorter* sorter READ sorter NOTIFY fakeSignal)
+    Q_PROPERTY(STDownloader* downloader READ downloader NOTIFY fakeSignal)
+    Q_PROPERTY(STUploader* uploader READ uploader NOTIFY fakeSignal)
 
 public:
     enum Status {
@@ -58,7 +65,8 @@ public:
         GetConfigsError,
         GetServerListError,
         FindClosestServerError,
-        DownloadError
+        DownloadError,
+        UploadError
     };
 
     SpeedTest(QObject *parent = Q_NULLPTR);
@@ -81,6 +89,7 @@ public:
     STServerSorter *sorter() const;
 
     STDownloader *downloader() const;
+    STUploader *uploader() const;
 
     Error error() const;
     QString errorString() const;
@@ -99,6 +108,7 @@ Q_SIGNALS:
     void statusChanged();
     void bestServerChanged();
     void statusStringChanged();
+    void fakeSignal();
 
     void finished();
 
