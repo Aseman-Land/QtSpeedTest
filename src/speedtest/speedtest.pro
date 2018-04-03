@@ -28,7 +28,8 @@ SOURCES += \
     $$PWD/stdownloader.cpp \
     $$PWD/stclient.cpp \
     $$PWD/stuploader.cpp \
-    $$PWD/stdummybuffer.cpp
+    $$PWD/stdummybuffer.cpp \
+    stuploaderhttp.cpp
 
 HEADERS += \
     $$PWD/speedtest.h \
@@ -47,4 +48,5 @@ HEADERS += \
     $$PWD/stuploader.h \
     $$PWD/stdummybuffer.h \
     $$PWD/speedtest_p.h \
-    $$PWD/libqspeedtest_global.h
+    $$PWD/libqspeedtest_global.h \
+    stuploaderhttp.h

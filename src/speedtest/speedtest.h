@@ -27,6 +27,7 @@
 #include "stserversorter.h"
 #include "stdownloader.h"
 #include "libqspeedtest_global.h"
+#include "stuploaderhttp.h"
 #include "stuploader.h"
 
 class LIBQSPEEDTESTSHARED_EXPORT SpeedTest : public QObject

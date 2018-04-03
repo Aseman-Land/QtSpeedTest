@@ -54,6 +54,7 @@ sp->start();
 3. `STServerSorter`: To find best server based on Latency and Sort them.
 4. `STDownloader`: To run download test with the given server-item.
 5. `STUploader`: To run upload  test with the given server-item.
+6. `STUploaderHttp`: To run upload test using http protocol.
 
 ## Example
 
