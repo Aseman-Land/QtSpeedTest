@@ -135,6 +135,7 @@ void STServerSorter::startCheckingLatencies(QList<STServerSorterItem> servers, q
 
     QNetworkRequest req;
     req.setHeader(QNetworkRequest::UserAgentHeader, p->list->client()->userAgent());
+    req.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
     req.setUrl(u.latencyUrl());
 
     QDateTime startTime = QDateTime::currentDateTime();

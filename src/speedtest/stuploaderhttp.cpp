@@ -118,6 +118,7 @@ void STUploaderHttp::start(const STServerItem &server, qint32 timeout, qint32 th
     QNetworkRequest req;
     req.setHeader(QNetworkRequest::UserAgentHeader, p->client->userAgent());
     req.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/x-www-form-urlencoded"));
+    req.setAttribute(QNetworkRequest::FollowRedirectsAttribute, true);
     req.setUrl(server.url());
 
     for(qint32 i=0; i<threads; i++)
