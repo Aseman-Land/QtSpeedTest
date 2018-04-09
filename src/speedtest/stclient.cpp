@@ -45,7 +45,7 @@ STClient::STClient(QObject *parent) :
     QObject(parent)
 {
     p = new Private;
-    p->configsUrl = QStringLiteral("http://www.speedtest.net/speedtest-config.php");
+    p->configsUrl = QStringLiteral("https://www.speedtest.net/speedtest-config.php");
     p->userAgent = QStringLiteral("QtSpeedTest/1.0.0");
 
     p->manager = new QNetworkAccessManager(this);

@@ -55,7 +55,7 @@ STServerList::STServerList(STClient *client, QObject *parent) :
     p = new Private;
     p->fetched = false;
     p->client = client;
-    p->serversUrl = QStringLiteral("http://www.speedtest.net/speedtest-servers-static.php");
+    p->serversUrl = QStringLiteral("https://www.speedtest.net/speedtest-servers-static.php");
 
     p->manager = new QNetworkAccessManager(this);
     p->reply = Q_NULLPTR;
